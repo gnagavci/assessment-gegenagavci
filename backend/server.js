@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
+import authRouter from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -12,6 +13,9 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//Routes
+app.use("/api/auth", authRouter);
 
 app.get("/", (req, res) => {
     res.json({ message: "Video Platform API is running" });
