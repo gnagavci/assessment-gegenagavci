@@ -52,6 +52,11 @@ export const register = async (req, res) => {
     }
 };
 
+/**
+ *
+ * Login with existing user
+ * POST /api/auth/login
+ */
 export const login = async (req, res) => {
     try {
         const { username, password } = req.body;

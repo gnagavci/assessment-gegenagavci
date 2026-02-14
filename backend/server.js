@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import authRouter from "./routes/authRoutes.js";
+import videoRoutes from "./routes/videoRoutes.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //Routes
 app.use("/api/auth", authRouter);
+app.use("/api/videos", videoRoutes);
 
 app.get("/", (req, res) => {
     res.json({ message: "Video Platform API is running" });
