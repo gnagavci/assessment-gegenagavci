@@ -39,7 +39,16 @@ export const uploadVideo = async (req, res) => {
  */
 export const getAllVideos = async (req, res) => {
     try {
-        const videos = await Video.find()
+        const { user } = req;
+
+        let query;
+        if (user.role === "admin") {
+            query = {};
+        } else {
+            query = { uploader: user._id };
+        }
+
+        const videos = await Video.find(query)
             .populate("uploader", "username")
             .sort({ createdAt: -1 });
 
