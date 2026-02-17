@@ -70,7 +70,7 @@
     position: absolute; /*relative to player-wrapper (parent)*/
     left: 0;
     right: 0;
-    bottom: 40px;
+    bottom: 0px;
     background: #111010;
     padding: 10px 14px;
     pointer-events: none; /*clickable play-pause*/

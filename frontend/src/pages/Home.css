@@ -1,0 +1,22 @@
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+.video-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feed-message {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.feed-message.error {
+    color: #e53935;
+}

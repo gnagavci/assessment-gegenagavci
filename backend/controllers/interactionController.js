@@ -8,7 +8,7 @@ import Video from "../models/Video.js";
  */
 export const addAnnotation = async (req, res) => {
     try {
-        const { id } = req.params.id;
+        const { id } = req.params;
         const { timestamp, text } = req.body;
 
         // 0 = falsy, users can't annotate 0:00
@@ -43,7 +43,7 @@ export const addAnnotation = async (req, res) => {
  */
 export const getVideoAnnotations = async (req, res) => {
     try {
-        const { id } = req.params.id;
+        const { id } = req.params;
         const { user } = req; //protect --> req.user
 
         const video = await Video.findById(id);
